@@ -22,5 +22,5 @@ console.log(`Personagem criado: Nome - ${nomePersonagem}, Classe - ${classeEscol
 const tela = document.getElementById("tela");
 const telaInicial = document.querySelector(".telaInicial");
 tela.removeChild(telaInicial);
-telaHub();
+telaHub(nomePersonagem, classeEscolhida, vida, mana, forca);
 }
