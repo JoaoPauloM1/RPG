@@ -39,6 +39,29 @@ export function telaHub(nomePersonagem, classeEscolhida, vida, mana, forca) {
     adicionarAtributo('Força', forca, './img/forca.png');
     adicionarAtributo('Mana', mana, './img/mana.png');
 
+    //Container do personagem e nome
+    const containerPersonagem = document.createElement("div");
+    containerPersonagem.classList.add("containerPersonagem");
+    screen.appendChild(containerPersonagem);
+
+    //Nome do personagem
+    const nomedoPersonagem = document.createElement("span");
+    nomedoPersonagem.textContent = nomePersonagem;
+    nomedoPersonagem.classList.add("nomePersonagem");
+    containerPersonagem.appendChild(nomedoPersonagem);
+
+    //Sprite do personagem
+    const spritePersonagem = document.createElement("img");
+    if (classeEscolhida === "Guerreiro") {
+        spritePersonagem.src = "./img/guerreiro.png";
+    } else if (classeEscolhida === "Mago") {
+        spritePersonagem.src = "./img/mago.png";
+    } else if (classeEscolhida === "Arqueiro") {
+        spritePersonagem.src = "./img/arqueiro.png";
+    }
+    spritePersonagem.classList.add("spritePersonagem")
+    containerPersonagem.appendChild(spritePersonagem);
+    
     // Exibe a tela inicial
     exibirTela(screen);
 }
