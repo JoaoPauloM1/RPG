@@ -90,6 +90,6 @@ export function telaInicial() {
         }
     });
 
-    // Exibe a tela inicial
+    // Exibe a tela
     exibirTela(screen);
 }

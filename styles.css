@@ -26,6 +26,8 @@ body {
     background-color: rgba(47, 39, 29, 0.9);
 }
 
+/*Tela Inicial*/
+
 .telaInicial {
     display: flex;
     flex-direction: column;
@@ -130,9 +132,42 @@ body {
     background-color: #b8860b;
 }
 
+/*Tela HUB*/
+
 .telaHub {
     width: 100vw;
     height: 100vh;
     background-image: url('./img/fundo-hub.png');
     background-size: cover;
+}
+
+.atributosDiv {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    border: 4px solid #b8860b;
+    background-color: #463825;
+    width: 170px;
+    height: 250px;
+    box-sizing: border-box;
+}
+
+.atributosSprites {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; 
+}
+
+.atributosSprites img {
+    width: 70px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.atributosValor {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 13px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
