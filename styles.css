@@ -205,20 +205,20 @@ body {
 .containerBotao {
     margin-left: 740px;
     display: flex;
-    justify-content: center;   /* Centraliza os botões horizontalmente */
-    align-items: center;       /* Centraliza os botões verticalmente */
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    max-width: 400px;          /* Aumente o tamanho máximo se necessário */
+    max-width: 400px; 
     margin-top: 40px;
-    gap: 200px;                 /* Espaço entre os botões */
+    gap: 200px; 
 }
 
 .containerBotao button {
     background-color: #3a2a1b;
     color: #fff;
     font-family: 'MedievalSharp', serif;
-    font-size: 20px;           /* Aumenta o tamanho da fonte */
-    padding: 15px 30px;        /* Aumenta o tamanho do botão */
+    font-size: 20px;
+    padding: 15px 30px;
     border: 2px solid #b8860b;
     border-radius: 8px;
     cursor: pointer;
@@ -234,3 +234,17 @@ body {
 .containerBotao button:active {
     transform: scale(0.95);
 }
+
+.dias {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-family: 'MedievalSharp', serif;
+    font-size: 24px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); 
+    border: 3px solid #b8860b;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background-color: #463825;
+  }

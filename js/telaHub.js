@@ -1,7 +1,8 @@
 import { exibirTela } from "../scripts.js";
+let dias = 0;
 
 export function telaHub(nomePersonagem, classeEscolhida, vida, mana, forca) {
-   // Div que contém tudo
+    //Div que contém tudo
     const screen = document.createElement("div");
     screen.classList.add("telaHub"); // Background
 
@@ -10,31 +11,31 @@ export function telaHub(nomePersonagem, classeEscolhida, vida, mana, forca) {
     atributosDiv.classList.add("atributosDiv");
     screen.appendChild(atributosDiv);
 
-    // Função para criar e adicionar os atributos na tela
+    //Função para criar e adicionar os atributos na tela
     function adicionarAtributo(nome, valor, imagemSrc) {
-    // Cria o contêiner do atributo
+    //Cria o contêiner do atributo
     const atributoContainer = document.createElement('div');
     atributoContainer.classList.add('atributosSprites');
 
-    // Cria o elemento de imagem do atributo
+    //Cria o elemento de imagem do atributo
     const imagem = document.createElement('img');
     imagem.src = imagemSrc;
     imagem.alt = nome;
 
-    // Cria o elemento de texto para o valor do atributo
+    //Cria o elemento de texto para o valor do atributo
     const valorSpan = document.createElement('span');
     valorSpan.classList.add('atributosValor');
     valorSpan.textContent = valor; // Atribui o valor ao span
 
-    // Adiciona a imagem e o valor ao contêiner do atributo
+    //Adiciona a imagem e o valor ao contêiner do atributo
     atributoContainer.appendChild(imagem);
     atributoContainer.appendChild(valorSpan);
 
-    // Adiciona o contêiner do atributo na div principal
+    //Adiciona o contêiner do atributo na div principal
     atributosDiv.appendChild(atributoContainer);
 }
 
-    // Chama a função para cada atributo com as imagens correspondentes
+    //Chama a função para cada atributo com as imagens correspondentes
     adicionarAtributo('Vida', vida, './img/coracao.png');
     adicionarAtributo('Força', forca, './img/forca.png');
     adicionarAtributo('Mana', mana, './img/mana.png');
@@ -62,28 +63,34 @@ export function telaHub(nomePersonagem, classeEscolhida, vida, mana, forca) {
     spritePersonagem.classList.add("spritePersonagem")
     containerPersonagem.appendChild(spritePersonagem);
     
-    // Div que contém os botões
+    //Div que contém os botões
     const containerBotao = document.createElement("div");
     containerBotao.classList.add("containerBotao");
     screen.appendChild(containerBotao);
 
-    // Botão aventura
+    //Botão aventura
     const botaoAventura = document.createElement("button");
     botaoAventura.type = "button";
     botaoAventura.textContent = "Aventura";
     containerBotao.appendChild(botaoAventura);
 
-    // Botão treino
+    //Botão treino
     const botaoTreino = document.createElement("button");
     botaoTreino.type = "button";
     botaoTreino.textContent = "Treino";
     containerBotao.appendChild(botaoTreino);
 
-    // Botão descanso
+    //Botão descanso
     const botaoDescanso = document.createElement("button");
     botaoDescanso.type = "button";
     botaoDescanso.textContent = "Descanso";
     containerBotao.appendChild(botaoDescanso);
+
+    //Dias
+    const diasSpan = document.createElement("span");
+    diasSpan.textContent = "Dia: " + dias;
+    diasSpan.classList.add("dias");
+    screen.appendChild(diasSpan);
 
     // Exibe a tela inicial
     exibirTela(screen);
