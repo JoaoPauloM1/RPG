@@ -18,7 +18,6 @@ export function iniciarJogo(nomePersonagem, classeEscolhida) {
         forca = 10;
     }
 
-console.log(`Personagem criado: Nome - ${nomePersonagem}, Classe - ${classeEscolhida}, Vida - ${vida}, Mana - ${mana}, Força - ${forca}`);
 const tela = document.getElementById("tela");
 const telaInicial = document.querySelector(".telaInicial");
 tela.removeChild(telaInicial);
