@@ -9,11 +9,11 @@ export function iniciarJogo(nomePersonagem, classeEscolhida) {
         mana = 5;
         forca = 15;
     } else if (classeEscolhida === "Mago") {
-        vida = 5;
-        mana = 15;
+        vida = 8;
+        mana = 17;
         forca = 5;
     } else if (classeEscolhida === "Arqueiro") {
-        vida = 8;
+        vida = 10;
         mana = 10;
         forca = 10;
     }

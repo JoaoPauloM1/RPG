@@ -53,15 +53,38 @@ export function telaHub(nomePersonagem, classeEscolhida, vida, mana, forca) {
     //Sprite do personagem
     const spritePersonagem = document.createElement("img");
     if (classeEscolhida === "Guerreiro") {
-        spritePersonagem.src = "./img/guerreiro.png";
+        spritePersonagem.src = "./img/guerreiro.gif";
     } else if (classeEscolhida === "Mago") {
-        spritePersonagem.src = "./img/mago.png";
+        spritePersonagem.src = "./img/mago.gif";
     } else if (classeEscolhida === "Arqueiro") {
-        spritePersonagem.src = "./img/arqueiro.png";
+        spritePersonagem.src = "./img/arqueiro.gif";
     }
     spritePersonagem.classList.add("spritePersonagem")
     containerPersonagem.appendChild(spritePersonagem);
     
+    // Div que contém os botões
+    const containerBotao = document.createElement("div");
+    containerBotao.classList.add("containerBotao");
+    screen.appendChild(containerBotao);
+
+    // Botão aventura
+    const botaoAventura = document.createElement("button");
+    botaoAventura.type = "button";
+    botaoAventura.textContent = "Aventura";
+    containerBotao.appendChild(botaoAventura);
+
+    // Botão treino
+    const botaoTreino = document.createElement("button");
+    botaoTreino.type = "button";
+    botaoTreino.textContent = "Treino";
+    containerBotao.appendChild(botaoTreino);
+
+    // Botão descanso
+    const botaoDescanso = document.createElement("button");
+    botaoDescanso.type = "button";
+    botaoDescanso.textContent = "Descanso";
+    containerBotao.appendChild(botaoDescanso);
+
     // Exibe a tela inicial
     exibirTela(screen);
 }

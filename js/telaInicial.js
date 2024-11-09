@@ -31,9 +31,9 @@ export function telaInicial() {
 
     // Classes
     const classes = [
-        { name: "Guerreiro", image: "./img/guerreiro.png" },
-        { name: "Mago", image: "./img/mago.png" },
-        { name: "Arqueiro", image: "./img/arqueiro.png" }
+        { name: "Guerreiro", image: "./img/guerreiro.gif" },
+        { name: "Mago", image: "./img/mago.gif" },
+        { name: "Arqueiro", image: "./img/arqueiro.gif" }
     ];
     
     let classeEscolhida = "";
