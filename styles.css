@@ -248,3 +248,11 @@ body {
     border-radius: 8px;
     background-color: #463825;
   }
+
+  /*Tela aventura*/
+  .telaAventura {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('./img/fundo-aventura.png');
+    background-size: cover;
+  }

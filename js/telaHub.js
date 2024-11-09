@@ -82,7 +82,7 @@ export function telaHub(nomePersonagem, classeEscolhida, vida, mana, forca) {
     containerBotao.appendChild(botaoAventura);
     botaoAventura.addEventListener("click", () => {
         tela.innerHTML = ''; // Limpa a tela antes de ir para a aventura
-        aventura(vida, mana, forca, dias);
+        aventura(nomePersonagem, classeEscolhida, vida, mana, forca);
     });
 
     // Botão treino
