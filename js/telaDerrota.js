@@ -20,8 +20,7 @@ export function telaDerrota(dias) {
 
     //Reiniciar jogo
     setTimeout(() => {
-        tela.innerHTML = '';
-        telaInicial();
+        location.reload()
     }, 4000);
 
     exibirTela(screen);
