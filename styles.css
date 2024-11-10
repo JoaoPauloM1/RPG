@@ -151,7 +151,7 @@ body {
     border: 4px solid #b8860b;
     background-color: #463825;
     width: 170px;
-    height: 250px;
+    height: 170px;
     box-sizing: border-box;
 }
 
@@ -247,12 +247,134 @@ body {
     padding: 10px 15px;
     border-radius: 8px;
     background-color: #463825;
-  }
+}
 
-  /*Tela aventura*/
-  .telaAventura {
+/*Tela aventura*/
+.telaAventura {
     width: 100vw;
     height: 100vh;
     background-image: url('./img/fundo-aventura.png');
     background-size: cover;
+}
+
+.resultadoAventura {
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 600px;
+    padding: 15px;
+    background-color: #463825;
+    border: 3px solid #8b5e3c;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    font-family: 'Georgia', serif;
+    color: #ffffff;
+    text-align: center;
+    font-size: 1.1em;
+    line-height: 1.4;
+    z-index: 1000;
+}
+
+.opcoes {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 5x;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    margin-bottom: 10px;
+}
+
+.opcoes button {
+    padding: 10px 20px;
+    background-color: #463825;
+    color: #fff;
+    border: 3px solid #8b5e3c;
+    border-radius: 5px;
+    font-family: 'Georgia', serif;
+    font-size: 1em;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.opcoes button:hover {
+    transform: scale(1.05);
+    background-color: #a56b4e;
+}
+
+.containerPersonagemAventura {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 520px;
+    margin-left: -300px;
+    width: 100%;
+}
+
+.inimigoDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 58%;
+    left: 62%;
+    width: 160px;
+    font-family: Arial, sans-serif;
+}
+
+.inimigoVida {
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: bold;
+    margin-top: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.spriteInimigo {
+    width: 160px;
+    height: 160px;
+}
+
+/*Tela descanso*/
+.telaDescanso {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('./img/fundo-descanso.png');
+    background-size: cover;
   }
+
+/*Tela derrota*/
+.telaDerrota {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('./img/fundo-derrota.png');
+    background-size: cover;
+    background-color: black;
+    color: red;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 8px black, 0 0 20px red;
+}
+
+/* Estilo específico para o texto "Você morreu" */
+.mensagemDerrota {
+    font-family: 'Arial', sans-serif;
+    animation: piscar 1s infinite alternate;
+}
+
+@keyframes piscar {
+    0% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
