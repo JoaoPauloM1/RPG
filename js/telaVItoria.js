@@ -17,6 +17,11 @@ export function telaVitoria() {
     vitoriaDiv.appendChild(mensagem);
     tela.appendChild(vitoriaDiv);
 
+    //Reiniciar jogo
+    setTimeout(() => {
+        location.reload()
+    }, 4000);
+
     // Exibe a tela de vitória final
     exibirTela(vitoriaDiv);
 }
