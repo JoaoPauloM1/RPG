@@ -18,7 +18,7 @@ export function adicionarAtributos(atributosDiv, vida, estamina, nivel, xp) {
     }
 
     // Chama a função para cada atributo com as imagens correspondentes
-    adicionarAtributo("Vida", vida.toFixed(), "./img/coracao.png");
+    adicionarAtributo("Vida", vida.toFixed(1), "./img/coracao.png");
     adicionarAtributo("Estamina", estamina, "./img/estamina.png");
 
     // Adiciona o nível

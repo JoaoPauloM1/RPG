@@ -103,7 +103,7 @@ export function aventura(nomePersonagem, classeEscolhida, vida, estamina, nivel,
             while (crit > 0.7 || crit < 0.5) {
                 crit = Math.random();
             }
-            return (danoBase / crit).toFixed();
+            return (danoBase / crit).toFixed(1);
         }
         return danoBase;
     };
@@ -121,11 +121,11 @@ export function aventura(nomePersonagem, classeEscolhida, vida, estamina, nivel,
 
         //Jogador ataca o inimigo
         const danoJogador = calcularDanoCritico(5 + nivel) * gerarFatorAleatorio();
-        resultadoDiv.textContent = `Você atacou! Dano: ${danoJogador.toFixed()}`;
+        resultadoDiv.textContent = `Você atacou! Dano: ${danoJogador.toFixed(1)}`;
         vidaInimigo -= danoJogador;
 
         //Atualiza a vida do inimigo
-        vidaInimigoSpan.textContent = vidaInimigo.toFixed();
+        vidaInimigoSpan.textContent = vidaInimigo.toFixed(1);
 
         if (vidaInimigo <= 0) {
             vidaInimigo = 0;
@@ -152,7 +152,7 @@ export function aventura(nomePersonagem, classeEscolhida, vida, estamina, nivel,
         //Inimigo ataca o jogador após o ataque
         setTimeout(() => {
             const danoInimigo = calcularDanoCritico(5 + Math.floor(nivel / 2)) * 1.5 * gerarFatorAleatorio();
-            resultadoDiv.textContent = `O inimigo atacou! Dano: ${danoInimigo.toFixed()}`;
+            resultadoDiv.textContent = `O inimigo atacou! Dano: ${danoInimigo.toFixed(1)}`;
             vida -= danoInimigo;
 
             if (vida <= 0) {
