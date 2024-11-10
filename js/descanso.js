@@ -12,7 +12,7 @@ export function descanso(nomePersonagem, classeEscolhida, vida, estamina, nivel,
     //Recupera vida e estamina
     vida += 10;
     estamina++;
-    const vidaMaxima = 20 + ((nivel - 1) * 4);
+    const vidaMaxima = 20 + ((nivel) * 4);
     if (vida > vidaMaxima) {
     vida = vidaMaxima;
     }
