@@ -151,7 +151,7 @@ body {
     border: 4px solid #b8860b;
     background-color: #463825;
     width: 170px;
-    height: 170px;
+    height: 220px;
     box-sizing: border-box;
 }
 
@@ -371,10 +371,27 @@ body {
 /* Estilo específico para o texto "Você morreu" */
 .mensagemDerrota {
     font-family: 'Arial', sans-serif;
-    animation: piscar 1s infinite alternate;
 }
 
-@keyframes piscar {
-    0% { opacity: 1; }
-    100% { opacity: 0.5; }
+/*Tela vitória*/
+.telaVitoria {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('./img/fundo-vitoria.png');
+    background-size: cover;
+    background-color: black;
+    color: red;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 8px black, 0 0 20px red;
+}
+
+/* Estilo específico para o texto "Você venceu" */
+.mensagemVitoria {
+    font-family: 'Arial', sans-serif;
 }

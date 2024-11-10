@@ -5,22 +5,30 @@ import { adicionarAtributos } from "./atributos.js";
 
 let dias = 0;
 
-export function telaHub(nomePersonagem, classeEscolhida, vida, estamina) {
+export function telaHub(nomePersonagem, classeEscolhida, vida, estamina, nivel, xp) {
+    
+    //Subir de nível
+    if (xp >= 30) {
+        xp = 0;
+        nivel++;
+        alert("Você subiu de nível!");
+    }
+
     const tela = document.getElementById("tela");
     tela.innerHTML = '';
     dias++;
 
-    //Div que contém tudo
+    // Div que contém tudo
     const screen = document.createElement("div");
     screen.classList.add("telaHub");
 
-    //Div dos atributos
+    // Div dos atributos
     const atributosDiv = document.createElement("div");
     atributosDiv.classList.add("atributosDiv");
     screen.appendChild(atributosDiv);
 
     // Adiciona os atributos na tela
-    adicionarAtributos(atributosDiv, vida, estamina);
+    adicionarAtributos(atributosDiv, vida, estamina, nivel, xp);
 
     // Container do personagem e nome
     const containerPersonagem = document.createElement("div");
@@ -49,9 +57,9 @@ export function telaHub(nomePersonagem, classeEscolhida, vida, estamina) {
     containerBotao.appendChild(botaoAventura);
     botaoAventura.addEventListener("click", () => {
         if (estamina > 0) {
-        tela.innerHTML = '';
-        estamina -= 1; // Perde 1 de estamina na aventura
-        aventura(nomePersonagem, classeEscolhida, vida, estamina);
+            tela.innerHTML = '';
+            estamina -= 1;
+            aventura(nomePersonagem, classeEscolhida, vida, estamina, nivel, xp);
         } else {
             alert("Estamina insuficiente, descanse para se recuperar.");
         }
@@ -63,11 +71,7 @@ export function telaHub(nomePersonagem, classeEscolhida, vida, estamina) {
     botaoDescanso.textContent = "Descanso";
     containerBotao.appendChild(botaoDescanso);
     botaoDescanso.addEventListener("click", () => {
-        if (vida < 20 || estamina < 3) {
-            descanso(nomePersonagem, classeEscolhida, vida, estamina);
-        }else {
-            alert("Vida e estamina já estão no máximo.")
-        }
+        descanso(nomePersonagem, classeEscolhida, vida, estamina, nivel, xp);
     });
 
     // Dias

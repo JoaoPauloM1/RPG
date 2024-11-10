@@ -1,4 +1,5 @@
 import { exibirTela } from "../scripts.js";
+import { telaInicial } from "./telaInicial.js";
 
 export function telaDerrota() {
     const tela = document.getElementById("tela");
@@ -16,6 +17,12 @@ export function telaDerrota() {
     // Adiciona a mensagem à tela
     derrotaDiv.appendChild(mensagem);
     tela.appendChild(derrotaDiv);
+
+    //Reiniciar jogo
+    setTimeout(() => {
+        tela.innerHTML = '';
+        telaInicial();
+    }, 4000);
 
     exibirTela(screen);
 }

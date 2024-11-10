@@ -1,4 +1,4 @@
-export function adicionarAtributos(atributosDiv, vida, estamina) {
+export function adicionarAtributos(atributosDiv, vida, estamina, nivel, xp) {
     // Função para criar e adicionar os atributos na tela
     function adicionarAtributo(nome, valor, imagemSrc) {
         const atributoContainer = document.createElement("div");
@@ -18,6 +18,18 @@ export function adicionarAtributos(atributosDiv, vida, estamina) {
     }
 
     // Chama a função para cada atributo com as imagens correspondentes
-    adicionarAtributo("Vida", vida, "./img/coracao.png");
+    adicionarAtributo("Vida", vida.toFixed(), "./img/coracao.png");
     adicionarAtributo("Estamina", estamina, "./img/estamina.png");
+
+    // Adiciona o nível
+    const nivelLabel = document.createElement("span");
+    nivelLabel.textContent = `Nível: ${nivel}`;
+    atributosDiv.appendChild(nivelLabel);
+
+    // Adiciona a experiência
+    const xpDiv = document.createElement("div");
+    const xpLabel = document.createElement("span");
+    xpLabel.textContent = `XP: ${xp}`;
+    xpDiv.appendChild(xpLabel);
+    atributosDiv.appendChild(xpDiv);
 }
