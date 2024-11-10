@@ -1,5 +1,4 @@
 import { exibirTela } from "../scripts.js";
-import { telaInicial } from "./telaInicial.js";
 
 export function telaDerrota(dias) {
     const tela = document.getElementById("tela");
