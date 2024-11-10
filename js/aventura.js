@@ -74,22 +74,25 @@ export function aventura(nomePersonagem, classeEscolhida, vida, estamina, nivel,
     vidaInimigoSpan.textContent = vidaInimigo;
     inimigoDiv.appendChild(vidaInimigoSpan);
 
-    //Escolhe o inimigo com base no nível
-    let boss = 0;
-    let inimigoSrc = "./img/inimigo.gif";
-    if (nivel >= 10) {
-        inimigoSrc = "./img/boss.gif"
-        boss = 1;
-    } else if (nivel >= 5) {
-        inimigoSrc = "./img/inimigo_forte.gif";
-    } else if (nivel >= 3) {
-        inimigoSrc = "./img/inimigo_medio.gif";
-    }
+    // Escolhe o inimigo com base no nível
+let boss = 0;
+let inimigoSrc = "./img/inimigo.gif";
+let inimigoClass = "spriteInimigo"; // Classe padrão para inimigo
 
-    const inimigo = document.createElement("img");
-    inimigo.src = inimigoSrc;
-    inimigo.classList.add("spriteInimigo");
-    inimigoDiv.appendChild(inimigo);
+if (nivel >= 10) {
+    inimigoSrc = "./img/boss.gif";
+    inimigoClass = "spriteBoss"; // Define a classe como spriteBoss para o boss
+    boss = 1;
+} else if (nivel >= 5) {
+    inimigoSrc = "./img/inimigo_forte.gif";
+} else if (nivel >= 3) {
+    inimigoSrc = "./img/inimigo_medio.gif";
+}
+
+const inimigo = document.createElement("img");
+inimigo.src = inimigoSrc;
+inimigo.classList.add(inimigoClass); // Aplica a classe apropriada
+inimigoDiv.appendChild(inimigo);
 
     //Div para mostrar se achou inimigo
     const resultadoDiv = document.createElement("div");
