@@ -83,7 +83,7 @@ if (nivel >= 10) {
     inimigoSrc = "./img/boss.gif";
     inimigoClass = "spriteBoss"; // Define a classe como spriteBoss para o boss
     boss = 1;
-} else if (nivel >= 5) {
+} else if (nivel >= 7) {
     inimigoSrc = "./img/inimigo_forte.gif";
 } else if (nivel >= 3) {
     inimigoSrc = "./img/inimigo_medio.gif";
@@ -154,7 +154,7 @@ inimigoDiv.appendChild(inimigo);
 
         //Inimigo ataca o jogador após o ataque
         setTimeout(() => {
-            const danoInimigo = calcularDanoCritico(5 + Math.floor(nivel / 2)) * 1.5 * gerarFatorAleatorio();
+            const danoInimigo = calcularDanoCritico(5 + Math.floor(nivel / 2)) * 1.4 * gerarFatorAleatorio();
             resultadoDiv.textContent = `O inimigo atacou! Dano: ${danoInimigo.toFixed(1)}`;
             vida -= danoInimigo;
 
