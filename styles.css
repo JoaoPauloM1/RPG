@@ -373,7 +373,6 @@ body {
     text-shadow: 2px 2px 8px black, 0 0 20px red;
 }
 
-/* Estilo específico para o texto "Você morreu" */
 .mensagemDerrota {
     font-family: 'Arial', sans-serif;
 }
@@ -396,7 +395,6 @@ body {
     text-shadow: 2px 2px 8px black, 0 0 20px #FFD700;
 }
 
-/* Estilo específico para o texto "Você venceu" */
 .mensagemVitoria {
     font-family: 'Arial', sans-serif;
 }
