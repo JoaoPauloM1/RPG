@@ -22,6 +22,8 @@ export function telaVitoria() {
     vitoriaDiv.appendChild(mensagem);
     tela.appendChild(vitoriaDiv);
 
+    alert("Parabéns! Você derrotou o boss do jogo!");
+
     //Reiniciar jogo
     setTimeout(() => {
         location.reload()

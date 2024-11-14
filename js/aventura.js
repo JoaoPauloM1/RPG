@@ -142,7 +142,6 @@ export function aventura(nomePersonagem, classeEscolhida, vida, estamina, nivel,
             somDerrotou.play();
             if (boss == 1) {
                 inimigo.src = "./img/inimigo_derrotado.png";
-                alert("Parabéns! Você derrotou o boss do jogo!");
                 const somDerrotou = new Audio('/sons/som-derrotou.mp3');
                 somDerrotou.volume = 0.15;
                 somDerrotou.play();
@@ -204,6 +203,9 @@ export function aventura(nomePersonagem, classeEscolhida, vida, estamina, nivel,
         const chanceFugir = Math.random() < 0.5;
         if (chanceFugir) {
             resultadoDiv.textContent = "Você fugiu!";
+            const somFugiu = new Audio('/sons/som-fugiu.mp3');
+            somFugiu.volume = 0.15;
+            somFugiu.play();
             setTimeout(() => {
                 tela.innerHTML = '';
                 telaHub(nomePersonagem, classeEscolhida, vida, estamina, nivel, xp);
@@ -248,7 +250,11 @@ export function aventura(nomePersonagem, classeEscolhida, vida, estamina, nivel,
 
     } else {
         resultadoDiv.textContent = "Você não encontrou nada desta vez, retornando para casa...";
+        const somDescanso = new Audio('/sons/som-descanso.mp3');
+        somDescanso.volume = 0.15;
+        somDescanso.play();
         setTimeout(() => {
+            somDescanso.pause();
             tela.innerHTML = '';
             telaHub(nomePersonagem, classeEscolhida, vida, estamina, nivel, xp);
         }, 3000);
