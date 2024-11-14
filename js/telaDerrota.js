@@ -4,16 +4,16 @@ export function telaDerrota(dias) {
     const tela = document.getElementById("tela");
     tela.innerHTML = '';
 
-    // Cria a div principal da tela de derrota
+    //Cria a div principal da tela de derrota
     const derrotaDiv = document.createElement("div");
     derrotaDiv.classList.add("telaDerrota");
 
-    // Cria a mensagem "Você morreu"
+    //Cria a mensagem "Você morreu"
     const mensagem = document.createElement("span");
     mensagem.textContent = "Você morreu";
     mensagem.classList.add("mensagemDerrota");
 
-    // Adiciona a mensagem à tela
+    //Adiciona a mensagem à tela
     derrotaDiv.appendChild(mensagem);
     tela.appendChild(derrotaDiv);
 

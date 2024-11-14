@@ -20,7 +20,13 @@ export function descanso(nomePersonagem, classeEscolhida, vida, estamina, nivel,
         estamina = 3;
     }
 
+    //Som
+    const somDescanso = new Audio('/sons/som-descanso.mp3');
+            somDescanso.volume = 0.15;
+            somDescanso.play();
+
     setTimeout(() => {
+        somDescanso.pause();
         tela.innerHTML = '';
         telaHub(nomePersonagem, classeEscolhida, vida, estamina, nivel, xp);
     }, 2000);

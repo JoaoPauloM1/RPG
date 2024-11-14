@@ -11,7 +11,10 @@ export function telaHub(nomePersonagem, classeEscolhida, vida, estamina, nivel, 
     if (xp >= 30) {
         xp = 0;
         nivel++;
-        alert("Você subiu de nível!");
+        const somNivel = new Audio('/sons/som-nivel.mp3');
+        somNivel.volume = 0.15;
+        somNivel.play();
+        alert("Você subiu de nível! +4 de vida máx.");
     }
 
     const tela = document.getElementById("tela");

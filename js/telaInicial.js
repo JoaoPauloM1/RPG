@@ -92,4 +92,38 @@ export function telaInicial() {
 
     // Exibe a tela
     exibirTela(screen);
+
+    //Música
+    const musica = new Audio('/sons/musica-de-fundo.mp3');
+    musica.loop = true;
+    musica.volume = 0.05;
+
+    //Função para verificar se a música estava tocando antes e retomá-la
+    function verificarMusicaTocando() {
+    if (sessionStorage.getItem('musicaTocando') === 'true') {
+        musica.play().catch(error => console.error("Erro ao tocar música:", error));
+        }
+    }
+
+    //Evento de clique para ativar/desativar a música
+    document.getElementById('botaoIniciarMusica').addEventListener('click', () => {
+        if (musica.paused) {
+        musica.play()
+            .then(() => {
+                sessionStorage.setItem('musicaTocando', 'true');
+                document.getElementById('botaoIniciarMusica').textContent = "Parar Música";
+            })
+            .catch(error => console.error("Erro ao tocar música:", error));
+        } else {
+        musica.pause();
+        sessionStorage.setItem('musicaTocando', 'false');
+        document.getElementById('botaoIniciarMusica').textContent = "Iniciar Música";
+        }
+    });
+
+    //Verifica se a música estava tocando ao carregar a página
+    verificarMusicaTocando();
+
+    //Atualiza o texto do botão com base no estado atual
+    document.getElementById('botaoIniciarMusica').textContent = musica.paused ? "Iniciar Música" : "Parar Música";
 }

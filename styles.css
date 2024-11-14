@@ -134,6 +134,31 @@ body {
     background-color: #b8860b;
 }
 
+#botaoIniciarMusica {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #5a3825;
+    color: #f1d6b1;
+    font-family: 'Papyrus', 'MedievalSharp', serif;
+    font-size: 16px; /* Diminui o tamanho da fonte */
+    padding: 8px 16px; /* Reduz o padding para diminuir o tamanho do botão */
+    border: 2px solid #3e2418;
+    border-radius: 6px; /* Diminui o arredondamento */
+    cursor: pointer;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+/* Efeito de hover */
+#botaoIniciarMusica:hover {
+    background-color: #6b4532;
+    color: #ffe6c1;
+    transform: scale(1.05);
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+
 /*Tela HUB*/
 
 .telaHub {

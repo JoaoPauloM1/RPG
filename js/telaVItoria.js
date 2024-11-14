@@ -8,6 +8,11 @@ export function telaVitoria() {
     const vitoriaDiv = document.createElement("div");
     vitoriaDiv.classList.add("telaVitoria");
 
+    //Som
+    const somVitoria = new Audio('/sons/som-vitoria.mp3');
+            somVitoria.volume = 0.1;
+            somVitoria.play();
+
     // Cria a mensagem "Você venceu"
     const mensagem = document.createElement("span");
     mensagem.textContent = "Você venceu! Parabéns!";
@@ -20,7 +25,7 @@ export function telaVitoria() {
     //Reiniciar jogo
     setTimeout(() => {
         location.reload()
-    }, 4000);
+    }, 5000);
 
     // Exibe a tela de vitória final
     exibirTela(vitoriaDiv);

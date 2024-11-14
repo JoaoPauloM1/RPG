@@ -75,24 +75,24 @@ export function aventura(nomePersonagem, classeEscolhida, vida, estamina, nivel,
     inimigoDiv.appendChild(vidaInimigoSpan);
 
     // Escolhe o inimigo com base no nível
-let boss = 0;
-let inimigoSrc = "./img/inimigo.gif";
-let inimigoClass = "spriteInimigo"; // Classe padrão para inimigo
+    let boss = 0;
+    let inimigoSrc = "./img/inimigo.gif";
+    let inimigoClass = "spriteInimigo"; // Classe padrão para inimigo
 
-if (nivel >= 10) {
-    inimigoSrc = "./img/boss.gif";
-    inimigoClass = "spriteBoss"; // Define a classe como spriteBoss para o boss
-    boss = 1;
-} else if (nivel >= 7) {
+    if (nivel >= 7) {
+        inimigoSrc = "./img/boss.gif";
+        inimigoClass = "spriteBoss"; // Define a classe como spriteBoss para o boss
+        boss = 1;
+    } else if (nivel >= 5) {
     inimigoSrc = "./img/inimigo_forte.gif";
-} else if (nivel >= 3) {
+    } else if (nivel >= 3) {
     inimigoSrc = "./img/inimigo_medio.gif";
-}
+    }
 
-const inimigo = document.createElement("img");
-inimigo.src = inimigoSrc;
-inimigo.classList.add(inimigoClass); // Aplica a classe apropriada
-inimigoDiv.appendChild(inimigo);
+    const inimigo = document.createElement("img");
+    inimigo.src = inimigoSrc;
+    inimigo.classList.add(inimigoClass); // Aplica a classe apropriada
+    inimigoDiv.appendChild(inimigo);
 
     //Div para mostrar se achou inimigo
     const resultadoDiv = document.createElement("div");
@@ -125,6 +125,9 @@ inimigoDiv.appendChild(inimigo);
         //Jogador ataca o inimigo
         const danoJogador = calcularDanoCritico(5 + nivel) * gerarFatorAleatorio();
         resultadoDiv.textContent = `Você atacou! Dano: ${danoJogador.toFixed(1)}`;
+        const somMob = new Audio('/sons/som-mob.mp3');
+        somMob.volume = 0.15;
+        somMob.play();
         vidaInimigo -= danoJogador;
 
         //Atualiza a vida do inimigo
@@ -134,9 +137,15 @@ inimigoDiv.appendChild(inimigo);
             vidaInimigo = 0;
             vidaInimigoSpan.textContent = vidaInimigo;
             resultadoDiv.textContent = "Você derrotou o inimigo!";
+            const somDerrotou = new Audio('/sons/som-derrotou.mp3');
+            somDerrotou.volume = 0.15;
+            somDerrotou.play();
             if (boss == 1) {
                 inimigo.src = "./img/inimigo_derrotado.png";
                 alert("Parabéns! Você derrotou o boss do jogo!");
+                const somDerrotou = new Audio('/sons/som-derrotou.mp3');
+                somDerrotou.volume = 0.15;
+                somDerrotou.play();
                 setTimeout(() => {
                     tela.innerHTML = '';
                     telaVitoria();
@@ -154,8 +163,11 @@ inimigoDiv.appendChild(inimigo);
 
         //Inimigo ataca o jogador após o ataque
         setTimeout(() => {
-            const danoInimigo = calcularDanoCritico(5 + Math.floor(nivel / 2)) * 1.4 * gerarFatorAleatorio();
+            const danoInimigo = calcularDanoCritico(4.7 + Math.floor(nivel / 2)) * gerarFatorAleatorio();
             resultadoDiv.textContent = `O inimigo atacou! Dano: ${danoInimigo.toFixed(1)}`;
+            const somDano = new Audio('/sons/som-dano.mp3');
+            somDano.volume = 0.15;
+            somDano.play();
             vida -= danoInimigo;
 
             if (vida <= 0) {
