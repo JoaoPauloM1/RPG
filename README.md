@@ -2,6 +2,7 @@
 
 <h2>📌 Sobre</h2>
 <p> Este projeto é um jogo de RPG desenvolvido como parte dos meus estudos em HTML, CSS e JavaScript. O objetivo foi praticar e aprimorar meus conhecimentos nessas tecnologias, criando uma experiência imersiva e personalizada no navegador. </p>
+<p> O objetivo do jogo é chegar no nível 7 e derrotar o boss final. </p>
 
 ![Sem título](https://github.com/user-attachments/assets/a020be50-b438-4658-8247-fed1594b1db5)
 
