@@ -16,6 +16,6 @@
 ## 🛠️ Run the project
 
 <div>
-  <a href="https://rpg-rho-fawn.vercel.app" target="_blank"><img loading="lazy" src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" target="_blank"></a>
+  <a href="https://rpg-delta.vercel.app" target="_blank"><img loading="lazy" src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" target="_blank"></a>
   <p>The application may have some bugs and might take longer to load images on the Vercel platform.</p>
 </div>
