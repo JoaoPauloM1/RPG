@@ -50,11 +50,11 @@ export function aventura(nomePersonagem, classeEscolhida, vida, estamina, nivel,
     opcoesDiv.classList.add("opcoes");
 
     const botaoAtacar = document.createElement("button");
-    botaoAtacar.textContent = "Atacar";
+    botaoAtacar.textContent = "Attack";
     opcoesDiv.appendChild(botaoAtacar);
 
     const botaoFugir = document.createElement("button");
-    botaoFugir.textContent = "Fugir";
+    botaoFugir.textContent = "Run";
     opcoesDiv.appendChild(botaoFugir);
 
     const inimigoDiv = document.createElement("div");

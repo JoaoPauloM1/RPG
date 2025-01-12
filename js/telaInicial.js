@@ -27,9 +27,9 @@ export function telaInicial() {
     form.appendChild(classeContainer);
 
     const classes = [
-        { name: "Warrior", image: "./img/guerreiro.gif" },
-        { name: "Mage", image: "./img/mago.gif" },
-        { name: "Archer", image: "./img/arqueiro.gif" }
+        { name: "Warrior", image: "./img/warrior.gif" },
+        { name: "Mage", image: "./img/mage.gif" },
+        { name: "Archer", image: "./img/archer.gif" }
     ];
     
     let classeEscolhida = "";
