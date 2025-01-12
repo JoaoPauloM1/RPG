@@ -1,3 +1,5 @@
+// Note: Variable and functions names are in Portuguese as the project was initially developed this way.
+
 import { telaHub } from "./telaHub.js";
 import { exibirTela } from "../scripts.js";
 
@@ -5,11 +7,9 @@ export function descanso(nomePersonagem, classeEscolhida, vida, estamina, nivel,
     const tela = document.getElementById("tela");
     tela.innerHTML = '';
 
-    // Cria a div principal que contém tudo
     const screen = document.createElement("div");
     screen.classList.add("telaDescanso");
 
-    //Recupera vida e estamina
     vida += 10;
     estamina++;
     const vidaMaxima = 20 + ((nivel) * 4);
@@ -20,7 +20,6 @@ export function descanso(nomePersonagem, classeEscolhida, vida, estamina, nivel,
         estamina = 3;
     }
 
-    //Som
     const somDescanso = new Audio('/sons/som-descanso.mp3');
             somDescanso.volume = 0.15;
             somDescanso.play();
@@ -31,6 +30,5 @@ export function descanso(nomePersonagem, classeEscolhida, vida, estamina, nivel,
         telaHub(nomePersonagem, classeEscolhida, vida, estamina, nivel, xp);
     }, 2000);
 
-    //Exibe a tela
     exibirTela(screen);
 }

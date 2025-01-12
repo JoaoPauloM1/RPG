@@ -1,5 +1,6 @@
+// Note: Variable and functions names are in Portuguese as the project was initially developed this way.
+
 export function adicionarAtributos(atributosDiv, vida, estamina, nivel, xp) {
-    // Função para criar e adicionar os atributos na tela
     function adicionarAtributo(nome, valor, imagemSrc) {
         const atributoContainer = document.createElement("div");
         atributoContainer.classList.add("atributosSprites");
@@ -17,16 +18,13 @@ export function adicionarAtributos(atributosDiv, vida, estamina, nivel, xp) {
         atributosDiv.appendChild(atributoContainer);
     }
 
-    // Chama a função para cada atributo com as imagens correspondentes
-    adicionarAtributo("Vida", vida.toFixed(1), "./img/coracao.png");
-    adicionarAtributo("Estamina", estamina, "./img/estamina.png");
+    adicionarAtributo("HP", vida.toFixed(1), "./img/coracao.png");
+    adicionarAtributo("Stamina", estamina, "./img/estamina.png");
 
-    // Adiciona o nível
     const nivelLabel = document.createElement("span");
-    nivelLabel.textContent = `Nível: ${nivel}`;
+    nivelLabel.textContent = `Level: ${nivel}`;
     atributosDiv.appendChild(nivelLabel);
 
-    // Adiciona a experiência
     const xpDiv = document.createElement("div");
     const xpLabel = document.createElement("span");
     xpLabel.textContent = `XP: ${xp}`;
