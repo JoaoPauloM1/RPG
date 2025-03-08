@@ -1,5 +1,3 @@
-// Note: Variable and functions names are in Portuguese as the project was initially developed this way.
-
 import { telaHub } from "./telaHub.js";
 import { exibirTela } from "../scripts.js";
 

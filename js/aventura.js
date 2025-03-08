@@ -1,5 +1,3 @@
-// Note: Variable and functions names are in Portuguese as the project was initially developed this way.
-
 import {
     telaHub
 } from "./telaHub.js";
@@ -50,11 +48,11 @@ export function aventura(nomePersonagem, classeEscolhida, vida, estamina, nivel,
     opcoesDiv.classList.add("opcoes");
 
     const botaoAtacar = document.createElement("button");
-    botaoAtacar.textContent = "Attack";
+    botaoAtacar.textContent = "Atacar";
     opcoesDiv.appendChild(botaoAtacar);
 
     const botaoFugir = document.createElement("button");
-    botaoFugir.textContent = "Run";
+    botaoFugir.textContent = "Fugir";
     opcoesDiv.appendChild(botaoFugir);
 
     const inimigoDiv = document.createElement("div");
@@ -109,7 +107,7 @@ export function aventura(nomePersonagem, classeEscolhida, vida, estamina, nivel,
         botaoFugir.disabled = true;
 
         const danoJogador = calcularDanoCritico(5 + nivel) * gerarFatorAleatorio();
-        resultadoDiv.textContent = `You attacked! Damage dealt: ${danoJogador.toFixed(1)}`;
+        resultadoDiv.textContent = `Você atacou! Dano: ${danoJogador.toFixed(1)}`;
         const somMob = new Audio('/sons/som-mob.mp3');
         somMob.volume = 0.15;
         somMob.play();
@@ -120,7 +118,7 @@ export function aventura(nomePersonagem, classeEscolhida, vida, estamina, nivel,
         if (vidaInimigo <= 0) {
             vidaInimigo = 0;
             vidaInimigoSpan.textContent = vidaInimigo;
-            resultadoDiv.textContent = "You defeated the enemy!";
+            resultadoDiv.textContent = "Você derrotou o inimigo!";
             const somDerrotou = new Audio('/sons/som-derrotou.mp3');
             somDerrotou.volume = 0.15;
             somDerrotou.play();
@@ -146,7 +144,7 @@ export function aventura(nomePersonagem, classeEscolhida, vida, estamina, nivel,
 
         setTimeout(() => {
             const danoInimigo = calcularDanoCritico(4.7 + Math.floor(nivel / 2)) * gerarFatorAleatorio();
-            resultadoDiv.textContent = `The enemy attacked! Damage dealt: ${danoInimigo.toFixed(1)}`;
+            resultadoDiv.textContent = `O inimigo atacou! Dano: ${danoInimigo.toFixed(1)}`;
             const somDano = new Audio('/sons/som-dano.mp3');
             somDano.volume = 0.15;
             somDano.play();
@@ -156,7 +154,7 @@ export function aventura(nomePersonagem, classeEscolhida, vida, estamina, nivel,
                 vida = 0;
                 atualizarAtributos();
                 spritePersonagem.src = `./img/${classeEscolhida.toLowerCase()}.png`;
-                resultadoDiv.textContent = "You have been defeated!";
+                resultadoDiv.textContent = "Você foi derrotado!";
                 setTimeout(() => {
                     tela.innerHTML = '';
                     telaDerrota();
@@ -181,7 +179,7 @@ export function aventura(nomePersonagem, classeEscolhida, vida, estamina, nivel,
 
         const chanceFugir = Math.random() < 0.5;
         if (chanceFugir) {
-            resultadoDiv.textContent = "You have fled!";
+            resultadoDiv.textContent = "Você fugiu!";
             const somFugiu = new Audio('/sons/som-fugiu.mp3');
             somFugiu.volume = 0.15;
             somFugiu.play();
@@ -190,11 +188,11 @@ export function aventura(nomePersonagem, classeEscolhida, vida, estamina, nivel,
                 telaHub(nomePersonagem, classeEscolhida, vida, estamina, nivel, xp);
             }, 3000);
         } else {
-            resultadoDiv.textContent = "You couldn't escape!";
+            resultadoDiv.textContent = "Você não conseguiu fugir!";
 
             setTimeout(() => {
                 const danoInimigo = calcularDanoCritico(5 + Math.floor(nivel / 2));
-                resultadoDiv.textContent = `The enemy attacked! Damage dealt: ${danoInimigo}`;
+                resultadoDiv.textContent = `O inimigo atacou! Dano:: ${danoInimigo}`;
                 vida -= danoInimigo;
                 atualizarAtributos();
 
@@ -202,7 +200,7 @@ export function aventura(nomePersonagem, classeEscolhida, vida, estamina, nivel,
                     spritePersonagem.src = `./img/${classeEscolhida.toLowerCase()}.png`;
                     vida = 0;
                     atualizarAtributos();
-                    resultadoDiv.textContent = "You have been defeated!";
+                    resultadoDiv.textContent = "Você foi derrotado!";
                     setTimeout(() => {
                         tela.innerHTML = '';
                         telaDerrota();
@@ -216,7 +214,7 @@ export function aventura(nomePersonagem, classeEscolhida, vida, estamina, nivel,
     };
 
     if (encontrouInimigo) {
-        resultadoDiv.textContent = "An enemy appears!";
+        resultadoDiv.textContent = "Um inimigo apareceu";
         screen.appendChild(opcoesDiv);
         screen.appendChild(inimigoDiv);
 
@@ -224,7 +222,7 @@ export function aventura(nomePersonagem, classeEscolhida, vida, estamina, nivel,
         botaoFugir.addEventListener("click", fugir);
 
     } else {
-        resultadoDiv.textContent = "Nothing was found this time, heading back home...";
+        resultadoDiv.textContent = "Nada encontrado, voltando para casa...";
         const somDescanso = new Audio('/sons/som-descanso.mp3');
         somDescanso.volume = 0.15;
         somDescanso.play();

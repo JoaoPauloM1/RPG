@@ -1,5 +1,3 @@
-// Note: Variable and functions names are in Portuguese as the project was initially developed this way.
-
 export function adicionarAtributos(atributosDiv, vida, estamina, nivel, xp) {
     function adicionarAtributo(nome, valor, imagemSrc) {
         const atributoContainer = document.createElement("div");

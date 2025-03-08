@@ -1,5 +1,3 @@
-// Note: Variable and functions names are in Portuguese as the project was initially developed this way.
-
 import { exibirTela } from "../scripts.js";
 import { aventura } from "./aventura.js";
 import { descanso } from "./descanso.js";
@@ -15,7 +13,7 @@ export function telaHub(nomePersonagem, classeEscolhida, vida, estamina, nivel, 
         const somNivel = new Audio('/sons/som-nivel.mp3');
         somNivel.volume = 0.15;
         somNivel.play();
-        alert("You leveled up! +4 max health.");
+        alert("Você subiu de nivel! +4 de vida!");
     }
 
     const tela = document.getElementById("tela");
@@ -51,7 +49,7 @@ export function telaHub(nomePersonagem, classeEscolhida, vida, estamina, nivel, 
 
     const botaoAventura = document.createElement("button");
     botaoAventura.type = "button";
-    botaoAventura.textContent = "Adventure";
+    botaoAventura.textContent = "Aventura";
     containerBotao.appendChild(botaoAventura);
     botaoAventura.addEventListener("click", () => {
         if (estamina > 0) {
@@ -59,20 +57,20 @@ export function telaHub(nomePersonagem, classeEscolhida, vida, estamina, nivel, 
             estamina -= 1;
             aventura(nomePersonagem, classeEscolhida, vida, estamina, nivel, xp);
         } else {
-            alert("Insufficient stamina, rest to recover.");
+            alert("Estamina insuficiente! descanse para recuperar.");
         }
     });
 
     const botaoDescanso = document.createElement("button");
     botaoDescanso.type = "button";
-    botaoDescanso.textContent = "Rest";
+    botaoDescanso.textContent = "Descanso";
     containerBotao.appendChild(botaoDescanso);
     botaoDescanso.addEventListener("click", () => {
         descanso(nomePersonagem, classeEscolhida, vida, estamina, nivel, xp);
     });
 
     const diasSpan = document.createElement("span");
-    diasSpan.textContent = "Day: " + dias;
+    diasSpan.textContent = "Dia: " + dias;
     diasSpan.classList.add("dias");
     screen.appendChild(diasSpan);
 

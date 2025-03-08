@@ -1,5 +1,3 @@
-// Note: Variable and functions names are in Portuguese as the project was initially developed this way.
-
 import { iniciarJogo } from "./iniciarJogo.js";
 import { exibirTela } from "../scripts.js";
 
@@ -18,7 +16,7 @@ export function telaInicial() {
 
     const nomeInput = document.createElement("input");
     nomeInput.type = "text";
-    nomeInput.placeholder = "Enter the character's name";
+    nomeInput.placeholder = "Coloque o nome do personagem";
     nomeInput.classList.add("nome");
     form.appendChild(nomeInput);
 
@@ -63,7 +61,7 @@ export function telaInicial() {
 
     const botao = document.createElement("button");
     botao.type = "button";
-    botao.textContent = "Start Game";
+    botao.textContent = "Começar jogo";
     botao.classList.add("botao-inicio");
     form.appendChild(botao);
 
@@ -74,7 +72,7 @@ export function telaInicial() {
         if (nomePersonagem && classeEscolhida) {
             iniciarJogo(nomePersonagem, classeEscolhida.value);
         } else {
-            alert("Please enter the character's name and choose a class.");
+            alert("Por favor coloque o nome do personagem e selecione uma classe.");
         }
     });
 
@@ -95,17 +93,17 @@ export function telaInicial() {
         musica.play()
             .then(() => {
                 sessionStorage.setItem('musicaTocando', 'true');
-                document.getElementById('botaoIniciarMusica').textContent = "Stop Music";
+                document.getElementById('botaoIniciarMusica').textContent = "Parar Música";
             })
-            .catch(error => console.error("Error playing music:", error));
+            .catch(error => console.error("Erro ao tocar música:", error));
         } else {
         musica.pause();
         sessionStorage.setItem('musicaTocando', 'false');
-        document.getElementById('botaoIniciarMusica').textContent = "Start Music";
+        document.getElementById('botaoIniciarMusica').textContent = "Iniciar Música";
         }
     });
 
     verificarMusicaTocando();
 
-    document.getElementById('botaoIniciarMusica').textContent = musica.paused ? "Start Music" : "Stop Music";
+    document.getElementById('botaoIniciarMusica').textContent = musica.paused ? "Iniciar Música" : "Parar Música";
 }

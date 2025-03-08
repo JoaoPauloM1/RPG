@@ -1,5 +1,3 @@
-// Note: Variable and functions names are in Portuguese as the project was initially developed this way.
-
 import { exibirTela } from "../scripts.js";
 
 export function telaDerrota(dias) {
@@ -10,7 +8,7 @@ export function telaDerrota(dias) {
     derrotaDiv.classList.add("telaDerrota");
 
     const mensagem = document.createElement("span");
-    mensagem.textContent = "You have died!";
+    mensagem.textContent = "Você morreu!";
     mensagem.classList.add("mensagemDerrota");
 
     derrotaDiv.appendChild(mensagem);
